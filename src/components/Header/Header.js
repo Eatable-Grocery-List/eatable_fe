@@ -8,8 +8,6 @@ const Header = () => {
       <img            
        src={headerImage}
         alt="various meals"
-        height="180"
-        width="180"
         className="header--photo"
           />
     </div>
