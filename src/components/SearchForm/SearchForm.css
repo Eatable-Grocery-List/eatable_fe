@@ -1,5 +1,6 @@
 .search-input {
   padding: 0.3rem;
+  margin-top: 80px; /* add this */
 }
 
 .recipe-search-btn {

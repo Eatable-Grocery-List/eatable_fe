@@ -1,0 +1,5 @@
+.recipe-card {
+  display: flex;
+  border: 10px solid greenyellow;
+  width: 20%;
+}
