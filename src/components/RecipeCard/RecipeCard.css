@@ -1,0 +1,26 @@
+.recipe-card {
+  display: flex;
+  border: 5px solid lightgrey;
+  width: 100%;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.card--title {
+  display: flex;
+  align-self: center;
+  font-size: 20px;
+  color: rgb(245, 223, 54);
+  font-weight: 600 ;
+}
+
+.card-image {
+  display: flex;
+  max-height: 250px;
+}
+
+.card--button {
+  display: flex;
+  align-self: center;
+  font-size: 18px;
+}
