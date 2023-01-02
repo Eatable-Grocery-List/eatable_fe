@@ -1,10 +1,12 @@
+.search-area {
+  margin-top: 10px;
+}
+
 .search-input {
   padding: 0.3rem;
-  margin-top: 80px; /* add this */
+  margin-top: 10px;
 }
 
 .recipe-search-btn {
   padding: 4px;
 }
-
-

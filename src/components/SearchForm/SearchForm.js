@@ -15,7 +15,7 @@ const SearchForm = ({ queryRecipes }) => {
     }
   };
 
-  const clearInputs = () => {
+  const clearInputs = () => { 
     setSearchValue("");
     setDomError("");
   };

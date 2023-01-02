@@ -20,9 +20,11 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Header />
+        <div className="body">
         <ShoppingListButton />
         <SearchForm queryRecipes={queryRecipes} />
         <Recipes recipes={recipes} />
+        </div>
       </header>
     </div>
   );
