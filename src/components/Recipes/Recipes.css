@@ -1,8 +1,9 @@
 .cards--container {
-  border: 20px solid pink;
-  padding: 10px;
+  border: 5px solid rgb(30, 23, 23);
+  padding: 15px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 60px;
+  justify-content: center;
+  margin-top: 50px;
+  max-width: 250px;
+  background-color: rgb(42, 32, 32);
 }

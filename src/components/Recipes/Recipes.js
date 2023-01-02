@@ -7,10 +7,10 @@ const Recipes = ({recipes}) => {
     return(
       <section className="cards--container">
         <RecipeCard
-          title={recipe.title}
+          title={recipe.attributes.title}
           id={index}
           key={Date.now()} //TODO put key and id in from BE - use Date.now
-          image={recipe.image}
+          image={recipe.attributes.image}
         />
       </section>
     )
