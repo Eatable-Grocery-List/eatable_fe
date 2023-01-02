@@ -4,8 +4,7 @@ import Header from "./components/Header/Header";
 import SearchForm from './components/SearchForm/SearchForm';
 import Recipes from './components/Recipes/Recipes';
 import ShoppingListButton from './components/ShoppingListButton/ShoppingListButton';
-// // import { Route, Routes } from "react-router-dom";
-// import ShoppingListPage from "./components/ShoppingListPage/ShoppingListPage"
+// 6
 
 
 function App() {
