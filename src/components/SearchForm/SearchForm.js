@@ -1,22 +1,9 @@
 import React, { useState } from "react";
 import './SearchForm.css';
 
-// export const queryRecipes = (searchValue) => {
-//   const endpoint = `http://localhost:5000/api/v1/recipes?search=${searchValue}`;
-//   fetch(endpoint)
-//     .then(response => response.json())
-//     .then(data => data.data)
-//     .then(recipe => recipe.map(recipe => console.log(recipe.attributes)))
-//     // .catch(error => {
-//     //   // Handle any errors
-//     // }); //TODO handle this error
-// }
-
-
 const SearchForm = ({ queryRecipes }) => {
   const [searchValue, setSearchValue] = useState("");
   const [domError, setDomError] = useState("");
-
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -34,7 +21,7 @@ const SearchForm = ({ queryRecipes }) => {
   };
 
   return (
-    <div>
+    <div className="search-area">
       <h3>Find A Recipe:</h3>
       <input
         type="text"
