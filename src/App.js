@@ -3,9 +3,10 @@ import React, {useState} from "react"
 import Header from "./components/Header/Header";
 import SearchForm from './components/SearchForm/SearchForm';
 import Recipes from './components/Recipes/Recipes';
+import ShoppingListButton from './components/ShoppingListButton/ShoppingListButton';
 
 function App() {
-  const [recipes, setRecipes ] = useState([]);
+  const [recipes, setRecipes] = useState([]);
   const queryRecipes = (searchValue) => {
     const endpoint = `http://localhost:5000/api/v1/recipes?search=${searchValue}`;
     fetch(endpoint)
@@ -19,6 +20,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Header />
+        <ShoppingListButton />
         <SearchForm queryRecipes={queryRecipes} />
         <Recipes recipes={recipes} />
       </header>
