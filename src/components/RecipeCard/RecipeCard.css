@@ -9,9 +9,9 @@
 .card--title {
   display: flex;
   align-self: center;
-  font-size: 20px;
+  font-size: 30px;
   color: rgb(245, 223, 54);
-  font-weight: 600 ;
+  font-weight: 800 ;
 }
 
 .card-image {
@@ -19,8 +19,19 @@
   max-height: 250px;
 }
 
-.card--button {
+.buttons-container {
   display: flex;
-  align-self: center;
+  align-content: center;
+}
+
+.see--ingredients--button{
+  display: flex;
   font-size: 18px;
+  margin: 7px;
+}
+
+.shopping--list--button {
+  display: flex;
+  font-size: 18px;
+  margin: 7px;
 }

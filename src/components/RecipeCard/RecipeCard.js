@@ -1,35 +1,41 @@
 import React, {useState} from "react";
 import './RecipeCard.css'; 
+import IngredientsList from "../IngredientsList/IngredientsList";
 
-// const [createShoppingList] = useMutation(UPDATE_CART_QUANTITY, {
-//   onCompleted: (data) => {
-//     setShoppingList(data.createShoppingList);
-//   },
-// });
+const RecipeCard = ({title, id, image, handleAddToShoppingList}) => {
+  const [ingredientsList, setIngredientsList] = useState([]);
+  const [ingredientsButtonText, setIngredientsButtonText] = useState("See Ingredients");
+  const [showIngredients, setShowIngredients] = useState(false);
+  const [listbuttonText, setListButtonText] = useState(false);
 
-// const handleCreatingShoppingList = () => {
-//   createShoppingList({ variables: { recipeName: title } });
-// };
+  const handleListingIngredients = () => {
+    const recipeName = title;
+    const endpoint = `http://localhost:5000/api/v1/shopping_list_ingredients/search?recipe_name=${recipeName}`;
 
+    fetch(endpoint)
+    .then(response => response.json())
+    .then(response=> setIngredientsList(response.data.attributes.ingredients));
 
-const RecipeCard = ({title, id, image}) => {
-  // const [shoppingList, setShoppingList] = useState([]);
-  // const queryRecipes = (searchValue) => {
-  //   const endpoint = `http://localhost:5000/api/v1/recipes?search=${searchValue}`;
-  //   fetch(endpoint)
-  //     .then(response => response.json())
-  //     .then(data => setRecipes(data.data))
-      // .catch(error => {
-      //   // Handle any errors
-      // }); //TODO handle this error
-  // console.log()
+    setIngredientsButtonText(ingredientsButtonText === "See Ingredients" ? "Hide Ingredients" : "See Ingredients");
+    setShowIngredients(!showIngredients);
+  }
+
   return (
-      //TODO add ID here as well as key
+    //TODO add ID here as well as key
     <div className="recipe-card" key={id}>
       <p className="card--title">{title}</p>
        <img src={image} className="card-image"/>
-       <button className="card--button" >Add to List</button> 
-       {/* //onClick={() => handleCreatingShoppingList()} */}
+       <div className="buttons-container">
+          <button className="see--ingredients--button" onClick={() => handleListingIngredients()} >{ingredientsButtonText}</button> 
+          <button className="shopping--list--button" onClick={() => handleAddToShoppingList(ingredientsList)}>Add To Shopping List</button>
+       </div>
+       {showIngredients && (
+        <IngredientsList
+        id={Date.now()}
+        key={Date.now()}
+        ingredients = {ingredientsList}
+        />
+       )}
     </div>
   )
 };

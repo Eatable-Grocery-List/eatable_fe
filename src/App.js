@@ -4,6 +4,8 @@ import Header from "./components/Header/Header";
 import SearchForm from './components/SearchForm/SearchForm';
 import Recipes from './components/Recipes/Recipes';
 import ShoppingListButton from './components/ShoppingListButton/ShoppingListButton';
+// 6
+
 
 function App() {
   const [recipes, setRecipes] = useState([]);
@@ -20,9 +22,11 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Header />
+        <div className="body">
         <ShoppingListButton />
         <SearchForm queryRecipes={queryRecipes} />
         <Recipes recipes={recipes} />
+        </div>
       </header>
     </div>
   );
