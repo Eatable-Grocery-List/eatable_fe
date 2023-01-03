@@ -19,8 +19,19 @@
   max-height: 250px;
 }
 
-.card--button {
+.buttons-container {
   display: flex;
-  align-self: center;
+  align-content: center;
+}
+
+.see--ingredients--button{
+  display: flex;
   font-size: 18px;
+  margin: 7px;
+}
+
+.shopping--list--button {
+  display: flex;
+  font-size: 18px;
+  margin: 7px;
 }
