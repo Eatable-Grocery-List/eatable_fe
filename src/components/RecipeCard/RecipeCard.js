@@ -2,11 +2,10 @@ import React, {useState} from "react";
 import './RecipeCard.css'; 
 import IngredientsList from "../IngredientsList/IngredientsList";
 
-const RecipeCard = ({title, id, image, handleAddToShoppingList}) => {
+const RecipeCard = ({title, id, image, handleAddToShoppingList, shoppingListButtonText}) => {
   const [ingredientsList, setIngredientsList] = useState([]);
   const [ingredientsButtonText, setIngredientsButtonText] = useState("See Ingredients");
   const [showIngredients, setShowIngredients] = useState(false);
-  const [listbuttonText, setListButtonText] = useState(false);
 
   const handleListingIngredients = () => {
     const recipeName = title;
@@ -18,6 +17,7 @@ const RecipeCard = ({title, id, image, handleAddToShoppingList}) => {
 
     setIngredientsButtonText(ingredientsButtonText === "See Ingredients" ? "Hide Ingredients" : "See Ingredients");
     setShowIngredients(!showIngredients);
+
   }
 
   return (
@@ -27,7 +27,7 @@ const RecipeCard = ({title, id, image, handleAddToShoppingList}) => {
        <img src={image} className="card-image"/>
        <div className="buttons-container">
           <button className="see--ingredients--button" onClick={() => handleListingIngredients()} >{ingredientsButtonText}</button> 
-          <button className="shopping--list--button" onClick={() => handleAddToShoppingList(ingredientsList)}>Add To Shopping List</button>
+          <button className="shopping--list--button" onClick={() => handleAddToShoppingList(ingredientsList)}>{shoppingListButtonText}</button>
        </div>
        {showIngredients && (
         <IngredientsList
